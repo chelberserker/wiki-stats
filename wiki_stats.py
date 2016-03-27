@@ -146,8 +146,15 @@ def bfs(G, start, target):
 
 def hist(fname, data, bins, range,  xlabel, ylabel, title, facecolor='green', alpha=0.5, transparent=True, **kwargs):
     plt.clf()
+    plt.yscale("log")
     n, bins, patches = plt.hist(data, bins, (0, range), facecolor='green', alpha=0.5)
     plt.savefig(fname, format="pdf")
+
+def hist_log(fname, data, bins, range,  xlabel, ylabel, title, facecolor='green', alpha=0.5, transparent=True, **kwargs):
+    plt.clf()
+    plt.xscale("log")
+    n, bins, patches = plt.hist(data, bins, (0, range), facecolor='green', alpha=0.5)
+    plt.savefig(fname, format="eps")
     
 
 
